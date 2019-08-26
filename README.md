@@ -3,7 +3,9 @@ SureTypeSC is implementation of algorithm for regenotyping of single cell data.
 
 ## Getting Started
 
+```
 pip install suretypesc
+```
 
 ### Prerequisites
 * git-lfs https://git-lfs.github.com/
@@ -16,10 +18,12 @@ pip install suretypesc
 ### Usage
 
 * create genome studio file (include name,chromosome,position, genotype, gencall score, x raw intensities, x normalized intensities, y raw instensities and y normalized intensities) [format, pandas dataframe]
+
 ```
 import surtypesc as sc
-```
 df = sc.basic("/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/GTCs","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.bpm","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.egt","/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/Samplesheetr.csv",'\t')
+
+```
 
 
 
