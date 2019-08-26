@@ -1,0 +1,17 @@
+README.md
+setup.py
+SureTypeSC/Config.py
+SureTypeSC/DataLoader.py
+SureTypeSC/MachineLearning.py
+SureTypeSC/Settings.py
+SureTypeSC/Timer.py
+SureTypeSC/Transformations.py
+SureTypeSC/__init__.py
+SureTypeSC/classifier.py
+SureTypeSC/genome_library.py
+SureTypeSC/protocol.py
+SureTypeSC.egg-info/PKG-INFO
+SureTypeSC.egg-info/SOURCES.txt
+SureTypeSC.egg-info/dependency_links.txt
+SureTypeSC.egg-info/requires.txt
+SureTypeSC.egg-info/top_level.txt
