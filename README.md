@@ -26,7 +26,6 @@ pip install .
 import SureTypeSC as sc
 
 df = sc.basic("/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/GTCs","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.bpm","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.egt","/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/Samplesheetr.csv",'\t')
-
 ```
 
 
@@ -88,7 +87,6 @@ recall mode: result_end.save_mode('recall','recall.txt',header=False,ratio=1)
 standard mode: result_end.save_mode('standard','st.txt',header=False,ratio=1)
 
 precision mode: result_end.save_mode('precision','precision.txt',header=False,ratio=1)
-
 ```
 
 ```
