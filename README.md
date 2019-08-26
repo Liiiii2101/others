@@ -23,13 +23,14 @@ pip install .
 * create genome studio file (include name,chromosome,position, genotype, gencall score, x raw intensities, x normalized intensities, y raw instensities and y normalized intensities) [format, pandas dataframe]
 
 ```
-import surtypesc as sc
+import SureTypeSC as sc
+
 df = sc.basic("/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/GTCs","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.bpm","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.egt","/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/Samplesheetr.csv",'\t')
 
 ```
 
 
-* index rearrangement (set index levels (including name chromosome and position))
+* Index rearrangement (set index levels (including name chromosome and position))
 ```
 dfs = sc.Data.create_from_frame(df)
 
