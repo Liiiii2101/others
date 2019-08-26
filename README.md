@@ -13,18 +13,12 @@ pip install suretypesc
 * pandas >= v0.22.0 (https://pandas.pydata.org/)
 
 
-```
-
-
-```
-
-
 ### Usage
 
 * create genome studio file (include name,chromosome,position, genotype, gencall score, x raw intensities, x normalized intensities, y raw instensities and y normalized intensities) [format, pandas dataframe]
-
+```
 import surtypesc as sc
-
+```
 df = sc.basic("/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/GTCs","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.bpm","/Users/apple/BeadArrayFiles-develop/library/Lishan/Manifest_and_Cluster/HumanKaryomap-12v1_A.egt","/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExampleData/Samplesheetr.csv",'\t')
 
 
@@ -33,53 +27,63 @@ df = sc.basic("/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExam
 
 
 * index rearrangement (set index levels (including name chromosome and position))
-
+```
 dfs = sc.Data.create_from_frame(df)
 
 dfs is Data type
-
+```
 
 *The attribute of Data type
 
+```
 dfs.restrict_chromosomes(['1','2']) (The parameters should be a list include the chromosome name)
 
 dfs.apply_NC_threshold_3(threshold,inplace = True) (the threshold is based on the gencall score)
+```
 
 * m,a calculation
-
+```
 dfs.calculate_transformations_2()
-
+```
 * Load classifier
-
+```
 from suretypesc import loader
 
 clf = loader('/Users/apple/SureTypeSC/clf/clf_30trees_7228_ratio1_lightweight.clf')
 
 clf_2 = loader('/Users/apple/SureTypeSC/clf/clf_GDA_7228_ratio1_58cells.clf') (input should be the path of classifier)
-
+```
 * predict
 
+```
 result_rf = clf.predict_decorate(test,clftype='rf',inn=['m','a'])  (test is the dataset,clftype is the short for classifier like 'rf' or 'gda'. inn is the input feature)
 result_gda = clf.predict_decorate(result_rf,clftype='gda',inn=['m','a'])
+```
 
 * Train and predict
+
+```
 train = sc.Trainer(result_rf,clfname='gda',inner=['m','a'],outer='rf_ratio:1.0_pred')
 
 train.train('rf')
 
 result_end = Tr.predict_decorate(result_gda,clftype='rf-gda',inn=['m','a'])
-
+```
 
 
 * save the result
-
+```
 result_end.save_complete_table('fulltable.txt',header=False)
-
+```
 * save the different modes
 
+```
 recall mode: result_end.save_mode('recall','recall.txt',header=False,ratio=1)
 standard mode: result_end.save_mode('standard','st.txt',header=False,ratio=1)
 precision mode: result_end.save_mode('precision','precision.txt',header=False,ratio=1)
+
+```
+
 
 
 
