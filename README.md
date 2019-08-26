@@ -26,10 +26,6 @@ df = sc.basic("/Users/apple/BeadArrayFiles-develop/library/Lishan/SingleCellExam
 ```
 
 
-
-
-
-
 * index rearrangement (set index levels (including name chromosome and position))
 ```
 dfs = sc.Data.create_from_frame(df)
@@ -61,6 +57,7 @@ clf_2 = loader('/Users/apple/SureTypeSC/clf/clf_GDA_7228_ratio1_58cells.clf') (i
 
 ```
 result_rf = clf.predict_decorate(test,clftype='rf',inn=['m','a'])  (test is the dataset,clftype is the short for classifier like 'rf' or 'gda'. inn is the input feature)
+
 result_gda = clf.predict_decorate(result_rf,clftype='gda',inn=['m','a'])
 ```
 
@@ -83,21 +80,14 @@ result_end.save_complete_table('fulltable.txt',header=False)
 
 ```
 recall mode: result_end.save_mode('recall','recall.txt',header=False,ratio=1)
+
 standard mode: result_end.save_mode('standard','st.txt',header=False,ratio=1)
+
 precision mode: result_end.save_mode('precision','precision.txt',header=False,ratio=1)
 
 ```
 
-
-
-
-
-
 ```
-
-
-
-
 The program enriches every sample in the input data by :
 
 | Subcolumn name  | Meaning |
@@ -108,8 +98,6 @@ The program enriches every sample in the input data by :
 | gda_ratio:1_pred | Gaussian Disciminant Analysis prediction (binary) | 
 | rf-gda_ratio:1_prob | combined 2-layer RF and GDA - probability score for the positive class | 
 | rf-gda_ratio:1_pred | binary prediction of RF-GDA | 
-
-
 ```
 
 
@@ -122,4 +110,3 @@ The program enriches every sample in the input data by :
 
 ### Contact
 In case of any questions please contact Ivan Vogel (ivogel@sund.ku.dk)
-
