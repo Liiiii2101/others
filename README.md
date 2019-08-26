@@ -3,10 +3,11 @@ SureTypeSC is implementation of algorithm for regenotyping of single cell data.
 
 ## Getting Started
 
+After unpacking the installation package, run the setup.py script by supplying command below
+
+
 ```
-
-
-pip install suretypesc
+pip install .
 ```
 
 ### Prerequisites
