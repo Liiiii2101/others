@@ -4,6 +4,8 @@ SureTypeSC is implementation of algorithm for regenotyping of single cell data.
 ## Getting Started
 
 ```
+
+
 pip install suretypesc
 ```
 
@@ -41,7 +43,7 @@ dfs.restrict_chromosomes(['1','2']) (The parameters should be a list include the
 dfs.apply_NC_threshold_3(threshold,inplace = True) (the threshold is based on the gencall score)
 ```
 
-* m,a calculation
+* M,A calculation
 ```
 dfs.calculate_transformations_2()
 ```
